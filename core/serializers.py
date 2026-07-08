@@ -19,10 +19,6 @@ class EmailSerializer(ModelSerializer):
         model=Email
         fields='__all__'
 
-class OutputSerializer(ModelSerializer):
-    class Meta:
-        model=Email
-        fields=['output']
 
 class DashboardSerializer(ModelSerializer):
     user=UserSerializer(read_only=True)

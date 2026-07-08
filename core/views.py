@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from core.models import Email
+from core.models import Email_DB
 from django.contrib.auth.models import User
 from core.serializers import EmailSerializer, AuthSerializer, DashboardSerializer
 from rest_framework.generics import CreateAPIView, RetrieveAPIView
@@ -17,7 +17,7 @@ class RegisterAPI(CreateAPIView):
 class DashboardAPI(APIView):
     permission_classes=[IsAuthenticated]
     def get(self, request):
-        data=Email.objects.filter(user=self.request.user)
+        data=Email_DB.objects.filter(user=self.request.user)
         serial=DashboardSerializer(data, many=True)
         return Response(serial.data)
     
@@ -40,7 +40,7 @@ class EmailDetailAPI(RetrieveAPIView):
     serializer_class=EmailSerializer
 
     def get_queryset(self):
-        return Email.objects.filter(user=self.request.user)
+        return Email_DB.objects.filter(user=self.request.user)
 
 
 

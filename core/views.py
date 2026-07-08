@@ -30,7 +30,7 @@ class DashboardAPI(APIView):
             length=serial.validated_data['length']
             output=email_output(recipent, tone, purpose, length)
 
-            Email.objects.create(user=self.request.user ,recipent=recipent, purpose=purpose, tone=tone, length=length, output=output)
+            Email_DB.objects.create(user=self.request.user ,recipent=recipent, purpose=purpose, tone=tone, length=length, output=output)
 
             return Response(output)
 

@@ -8,6 +8,7 @@ class Email_DB(models.Model):
     tone=models.CharField(max_length=50, choices=[('PROFESSIONAL', 'Professional'), ('FRIENDLY AND CONVERSATIONAL', 'Friendly and Conversational'), ('EMPATHETIC AND SUPPORTIVE', 'Empathetic and Supportive'), ('HUMOUROUS AND PLAYFUL', 'Humorous and Playful'), ('DIRECT AND ASSERTIVE', 'Direct and Assertive')])
     length=models.PositiveIntegerField()
     output=models.TextField(null=True)
+    time=models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.user.first_name

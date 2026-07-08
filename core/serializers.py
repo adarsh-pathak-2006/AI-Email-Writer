@@ -24,4 +24,4 @@ class DashboardSerializer(ModelSerializer):
     user=UserSerializer(read_only=True)
     class Meta:
         model=Email_DB
-        fields=['user', 'id', 'recipent', 'purpose', 'tone', 'length']
+        fields=['user', 'id', 'recipent', 'purpose', 'tone', 'length', 'time']

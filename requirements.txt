@@ -1,0 +1,8 @@
+Django>=4.2
+djangorestframework
+djangorestframework-simplejwt
+python-dotenv
+google-genai
+django-cors-headers
+dj-database-url
+gunicorn

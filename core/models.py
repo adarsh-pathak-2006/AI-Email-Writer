@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class Email_DB(models.Model):
     user=models.ForeignKey(User, on_delete=models.CASCADE)
-    recipent=models.EmailField()
+    recipent=models.CharField(max_length=200)
     purpose=models.TextField()
     tone=models.CharField(max_length=50, choices=[('PROFESSIONAL', 'Professional'), ('FRIENDLY AND CONVERSATIONAL', 'Friendly and Conversational'), ('EMPATHETIC AND SUPPORTIVE', 'Empathetic and Supportive'), ('HUMOUROUS AND PLAYFUL', 'Humorous and Playful'), ('DIRECT AND ASSERTIVE', 'Direct and Assertive')])
     length=models.PositiveIntegerField()
@@ -12,4 +12,3 @@ class Email_DB(models.Model):
 
     def __str__(self):
         return self.user.first_name
-
